@@ -167,7 +167,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/task/dashboard", {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/task/dashboard`, {
           headers: { "Content-Type": "application/json" },
           credentials: "include",
         });
@@ -318,3 +318,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
