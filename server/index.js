@@ -33,10 +33,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(morgan("dev"));
+app.get("/", (req, res) => {
+  res.send("Server is running correctly");
+});
 app.use("/api", routes);
 
 app.use(routeNotFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+
 
