@@ -6,7 +6,6 @@ import User from "../models/user.js";
 export const dbConnection = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-
     console.log("DB connection established");
     const adminExists = await User.findOne({ email: "admin@example.com" });
 
@@ -21,7 +20,6 @@ export const dbConnection = async () => {
         title: "Admin",
       });
 
-      console.log("Admin user created:", adminUser);
     } else {
       console.log("Admin user already exists:", adminExists);
     }
@@ -45,4 +43,5 @@ const isProduction = process.env.NODE_ENV !== "development";
   });
   return token;
 };
+
 
