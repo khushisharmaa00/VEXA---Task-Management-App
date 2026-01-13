@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: ["http://localhost:3000", "https://vexa-task-management-app.vercel.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
@@ -39,3 +39,4 @@ app.use(routeNotFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+
