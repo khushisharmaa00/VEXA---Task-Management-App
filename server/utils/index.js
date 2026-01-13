@@ -21,7 +21,7 @@ export const dbConnection = async () => {
       });
 
     } else {
-      console.log("Admin user already exists:", adminExists);
+      console.log("Admin user already exists");
     }
   } catch (error) {
     console.log("DB Error: " + error);
@@ -43,5 +43,6 @@ const isProduction = process.env.NODE_ENV !== "development";
   });
   return token;
 };
+
 
 
